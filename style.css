@@ -1,0 +1,62 @@
+.button {
+  display: inline-block;
+  font-size: 40px; 
+  height: 60px;
+  width: 91px; 
+  margin: 0;
+  border: solid;
+  background-color: #ddd; 
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.button:active{
+  background-color: #999; 
+}
+
+#screen{
+  font-size: 100px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  overflow: scroll;
+  width: 410px; 
+  border: solid;
+  text-align: right; 
+  background-color: black; 
+  color: white; 
+}
+#pad{
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 410px; 
+  padding: 0;
+  padding-bottom: 100px; 
+}
+
+.row {
+  margin: 0;
+  padding: 0; 
+}
+.column{
+  display: inline-block;
+  margin: 0;
+}
+
+.orange {
+  background-color: orange; 
+  color: white;
+  border-color: black; 
+}
+
+.orange:active {
+  background-color: red; 
+}
+
+#zero {
+  border-right-color: #ddd; 
+} 
+#zero2 {
+  color: #ddd;
+  border-color: black;
+  border-left-color: #ddd; 
+}
