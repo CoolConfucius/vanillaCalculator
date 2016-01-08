@@ -29,15 +29,22 @@ function init(){
   document.getElementById('neg').addEventListener('click', negClicked);
   document.getElementById('decimal').addEventListener('click', decimalClicked);
   document.getElementById('percent').addEventListener('click', percentClicked);
+  document.getElementById('square').addEventListener('click', squareClicked);
+  document.getElementById('third').addEventListener('click', thirdClicked);
+  document.getElementById('root').addEventListener('click', rootClicked);
 }
 
 function numClicked(event){  
   ac.textContent = 'C';
   var text = this.textContent; 
   if (equal) {
+    num1 = []; 
     num2 = []; 
     isReady = false; 
+    next = false; 
+    neg1 = false; 
     neg2 = false; 
+    isDecimal1 = false;
     isDecimal2 = false;
     equal = false; 
   };
@@ -149,6 +156,42 @@ function percentClicked(event){
     temp = doPercent(num1); 
     num1 = temp.toString().split('');       
     display = num1.join('');
+  };
+  show.textContent = display;
+}
+
+function squareClicked (event) {
+  console.log(num1, num2);
+  if (next) {
+    num2 = [doMath(num2, '*', num2).toString()];
+    display = num2[0]; 
+  } else {
+    num1 = [doMath(num1, '*', num1).toString()];
+    display = num1[0]; 
+  };
+  show.textContent = display;
+}
+
+function thirdClicked (event) {
+  console.log(num1, num2);
+  if (next) {
+    num2 = [doMath(num2, '*', [doMath(num2, '*', num2).toString()]).toString()];
+    display = num2[0]; 
+  } else {
+    num1 = [doMath(num1, '*', [doMath(num1, '*', num1).toString()]).toString()];
+    display = num1[0]; 
+  };
+  show.textContent = display;
+}
+
+function rootClicked (event) {
+  console.log(num1, num2);
+  if (next) {
+    num2=[Math.sqrt(parseFloat(removeComma(num1.toString()))).toString()]; 
+    display = num2[0]; 
+  } else {
+    num1=[Math.sqrt(parseFloat(removeComma(num1.toString()))).toString()]; 
+    display = num1[0]; 
   };
   show.textContent = display;
 }
