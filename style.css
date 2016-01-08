@@ -60,3 +60,8 @@
   border-color: black;
   border-left-color: #ddd; 
 }
+
+#science {
+  width: 410px; 
+  margin: 0 auto; 
+}
